@@ -14,12 +14,19 @@ App.controller("ExmpCtrl",function  ($scope,$route) {
 	$scope.debug = $route;
 });
 
-App.controller("ChildCtrl1",function  ($scope) {
+App.controller("ChildCtrl1",function  ($scope,$routeParams) {
 	$scope.message = "Link 1 has been Visited";
+	$scope.debug = $routeParams;
 });
 
-App.controller("ChildCtrl2",function  ($scope) {
+App.controller("ChildCtrl2",function  ($scope,$routeParams) {
 	$scope.message = "Link 2 has been Visited";
+	$scope.debug = $routeParams;
+});
+
+App.controller("ChildCtrl3",function  ($scope,$routeParams) {
+	$scope.message = "Link 3 has been visited";
+	$scope.debug = $routeParams;
 });
 
 App.config(function  ($routeProvider,$locationProvider) {
@@ -27,7 +34,7 @@ App.config(function  ($routeProvider,$locationProvider) {
 	.when("/link1",{
 		templateUrl : "js/hello.html" , controller : "ChildCtrl1"
 	})
-	.when("/link2",{
+	.when("/link2/:linkId",{
 		templateUrl : "js/hello2.html" , controller : "ChildCtrl2"
 	})
 	.otherwise({

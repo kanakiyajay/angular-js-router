@@ -72,14 +72,11 @@
   <base href="/xampp/projects/angular-js-exmplaes/ngRouter/" />
 	<div class="container" id="playground">
           <div class="row" ng-controller="ExmpCtrl">
-            <p><a href="link1">Link1</a></p>
-            <p><a href="link2">Link2</a></p>
+            <p><a href="link1?search=hello">Link1</a></p>
+            <p><a href="link2/1">Link2</a></p>
             <p><a href="#">Back</a></p>
           </div>
           <div ng-view></div>
-          <div class="text-info">
-            {{debug | json}}
-          </div>
 	</div>
 	<script type="text/javascript" async>
 	  var _gaq = _gaq || [];
